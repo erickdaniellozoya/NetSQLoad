@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetSQLoad", "NetSQLoad\NetSQLoad.csproj", "{57BCE108-4174-46E6-BF5B-B23B186E6266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSQLoadUnitTests", "NetSQLoadUnitTests\NetSQLoadUnitTests.csproj", "{7C1F87B5-24B4-4F54-AE36-41A4C4A95CC6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57BCE108-4174-46E6-BF5B-B23B186E6266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57BCE108-4174-46E6-BF5B-B23B186E6266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57BCE108-4174-46E6-BF5B-B23B186E6266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57BCE108-4174-46E6-BF5B-B23B186E6266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C1F87B5-24B4-4F54-AE36-41A4C4A95CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C1F87B5-24B4-4F54-AE36-41A4C4A95CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C1F87B5-24B4-4F54-AE36-41A4C4A95CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C1F87B5-24B4-4F54-AE36-41A4C4A95CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8E14E27E-2897-40BB-BA72-ECDD7C1CA328}
+	EndGlobalSection
+EndGlobal
