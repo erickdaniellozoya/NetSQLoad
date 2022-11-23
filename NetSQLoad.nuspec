@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>NetSQLoad</id>
+    <version>1.0.0</version>
+    <authors>Erick Lozoya</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/erickdaniellozoya/NetSQLoad</projectUrl>
+    <description>Work your SQL queries in a SQL file separated from the code</description>
+    <releaseNotes>Fisrt release.</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>SQL</tags>
+  </metadata>
+  <files>
+    <file src="NetSQLoad\bin\Release\net7.0\NetSQLoad.dll" target="lib" />
+  </files>
+</package>
