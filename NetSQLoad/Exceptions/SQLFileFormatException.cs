@@ -2,8 +2,8 @@
 {
     internal class SQLFileFormatException : Exception
     {
-        public SQLFileFormatException() { }
+        internal SQLFileFormatException() { }
 
-        public SQLFileFormatException(string message) : base(message) { }
+        internal SQLFileFormatException(string message) : base(message) { }
     }
 }

@@ -45,23 +45,25 @@ namespace NetSQLoad
 
         public string Query(string queryName)
         {
-            _queries.TryGetValue(queryName, out string query);
-            return query;
+            bool success = _queries.TryGetValue(queryName, out string query);
+            if (success) throw new QueryException($"Query '{queryName}' was not found.");
+            return query ?? "";
         }
 
         public string Query(string queryName, params object[] queryParams)
         {
-            _queries.TryGetValue(queryName, out string query);
+            bool success = _queries.TryGetValue(queryName, out string query);
+            if (success) throw new QueryException($"Query '{queryName}' was not found.");
             for (int i = 0; i < queryParams.Length; i++)
             {
                 object queryParam = queryParams[i];
                 Type paramType = queryParam.GetType();
                 if (paramType.Name.ToLower() == "string")
                 {
-                    queryParams[i] = $"'{queryParam.ToString().Replace("'", string.Empty)}'";
+                    queryParams[i] = $"'{queryParam?.ToString()?.Replace("'", string.Empty)}'";
                 }
             }
-            string formatedQuery = string.Format(query, queryParams);
+            string formatedQuery = string.Format(query ?? "", queryParams);
             return formatedQuery;
         }
 
