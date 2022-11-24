@@ -67,5 +67,14 @@ namespace NetSQLoadUnitTests
             SQLoad sqload = new(path);
             Assert.That(sqload.Queries, Is.EqualTo(excpected));
         }
+
+        [Test]
+        public void Method_Query_Success() 
+        { 
+            string path = _successDirectory;
+            SQLoad sqload = new(path);
+            string query = sqload.Query("query1");
+            Assert.Pass(query);
+        }
     }
 }
