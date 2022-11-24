@@ -10,7 +10,7 @@ namespace NetSQLoadUnitTests
         [Test]
         public void Attribute_SQLRoute()
         {
-            string path = @"C:\Users\erick\source\repos\NetSQLoad\NetSQLoadUnitTests\TestQueries";
+            string path = @"";
             SQLoad sqload = new(path);
             string query = sqload.Query("query3", 1, "'hola' AND 1=1");
             Assert.AreEqual(path, sqload.Path);

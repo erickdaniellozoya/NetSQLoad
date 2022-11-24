@@ -1,4 +1,5 @@
-﻿using NetSQLoad.Helpers;
+﻿using NetSQLoad.Exceptions;
+using NetSQLoad.Helpers;
 
 namespace NetSQLoad
 {
@@ -7,16 +8,35 @@ namespace NetSQLoad
         private readonly string _sqlPath;
         private readonly bool _casesensitive;
         private readonly Dictionary<string, string> _queries;
+
         public SQLoad(string sqlPath) 
-        { 
+        {
+            if (string.IsNullOrEmpty(sqlPath)) throw new InvalidPathException("Argument sqlPath cannot be null or empty.");
+            if (sqlPath.ToLower().EndsWith(".sql"))
+            {
+                if (!File.Exists(sqlPath)) throw new InvalidPathException("The specified file doesn't exist.");
+            }
+            else
+            {
+                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist");
+            }
             _sqlPath = sqlPath;
             _casesensitive = true;
             Dictionary<string, string> queries = new Dictionary<string, string>();
             _queries = FileHelper.GetQueries(_sqlPath);
         }
 
-        public SQLoad(string sqlPath, bool casesensitive)
+        public SQLoad(string sqlPath, bool casesensitive = true)
         {
+            if (string.IsNullOrEmpty(sqlPath)) throw new InvalidPathException("Argument sqlPath cannot be null or empty.");
+            if (sqlPath.ToLower().EndsWith(".sql"))
+            {
+                if (!File.Exists(sqlPath)) throw new InvalidPathException("The specified file doesn't exist.");
+            }
+            else
+            {
+                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist");
+            }
             _sqlPath = sqlPath;
             _casesensitive = casesensitive;
             Dictionary<string, string> queries = new Dictionary<string, string>();

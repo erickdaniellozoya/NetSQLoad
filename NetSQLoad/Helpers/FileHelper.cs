@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using NetSQLoad.Exceptions;
+using System.Text;
 
 namespace NetSQLoad.Helpers
 {
@@ -18,6 +19,11 @@ namespace NetSQLoad.Helpers
             else
             {
                 paths.Add(queriesPath);
+            }
+
+            if(paths.Count == 0)
+            {
+                throw new InvalidPathException($"No SQL files found in {queriesPath}");
             }
 
             foreach (var path in paths)
