@@ -5,23 +5,10 @@ namespace NetSQLoad.Helpers
 {
     internal static class FileHelper
     {
-        internal static Dictionary<string, string> GetQueries(string queriesPath)
+        internal static Dictionary<string, string> GetQueries(string queriesPath, bool caseSensitive)
         {
             Dictionary<string, string> queries = new Dictionary<string, string>();
-            List<string> paths = new List<string>();
-            if (!queriesPath.ToLower().EndsWith(".sql"))
-            {
-                if (Directory.Exists(queriesPath))
-                {
-                    paths = Directory.GetFiles(queriesPath, "*.sql", SearchOption.AllDirectories).ToList();
-                }
-            }
-            else
-            {
-                paths.Add(queriesPath);
-            }
-
-            if(paths.Count == 0) throw new InvalidPathException($"No SQL files found in {queriesPath}.");
+            List<string> paths = GetSQLFiles(queriesPath);
 
             foreach (var path in paths)
             {
@@ -48,13 +35,33 @@ namespace NetSQLoad.Helpers
 
                 if (!string.IsNullOrEmpty(queryName) && queryValue.Length > 0)
                 {
-                    queries.Add(queryName, queryValue.ToString().Trim());
+                    queries.Add(caseSensitive ? queryName : queryName.ToLower(), queryValue.ToString().Trim());
                 }
             }
 
             if (queries.Count == 0) throw new SQLFileFormatException("SQL files don't have the required format.");
 
             return queries;
+        }
+
+        internal static List<string> GetSQLFiles(string path)
+        {
+            List<string> paths = new List<string>();
+            if (!path.ToLower().EndsWith(".sql"))
+            {
+                if (Directory.Exists(path))
+                {
+                    paths = Directory.GetFiles(path, "*.sql", SearchOption.AllDirectories).ToList();
+                }
+            }
+            else
+            {
+                paths.Add(path);
+            }
+
+            if (paths.Count == 0) throw new InvalidPathException($"No SQL files found in '{path}'.");
+
+            return paths;
         }
     }
 }
