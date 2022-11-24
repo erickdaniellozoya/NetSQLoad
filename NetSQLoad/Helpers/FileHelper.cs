@@ -21,10 +21,7 @@ namespace NetSQLoad.Helpers
                 paths.Add(queriesPath);
             }
 
-            if(paths.Count == 0)
-            {
-                throw new InvalidPathException($"No SQL files found in {queriesPath}");
-            }
+            if(paths.Count == 0) throw new InvalidPathException($"No SQL files found in {queriesPath}.");
 
             foreach (var path in paths)
             {
@@ -54,6 +51,8 @@ namespace NetSQLoad.Helpers
                     queries.Add(queryName, queryValue.ToString().Trim());
                 }
             }
+
+            if (queries.Count == 0) throw new SQLFileFormatException("SQL files don't have the required format.");
 
             return queries;
         }

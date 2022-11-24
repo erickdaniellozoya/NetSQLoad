@@ -18,7 +18,7 @@ namespace NetSQLoad
             }
             else
             {
-                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist");
+                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist.");
             }
             _sqlPath = sqlPath;
             _casesensitive = true;
@@ -35,7 +35,7 @@ namespace NetSQLoad
             }
             else
             {
-                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist");
+                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist.");
             }
             _sqlPath = sqlPath;
             _casesensitive = casesensitive;
