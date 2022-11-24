@@ -11,43 +11,43 @@ Install NetSQLoad with:
 .NET CLI
 
 ```bash
-dotnet add package NetSQLoad --version 1.1.2
+dotnet add package NetSQLoad --version 1.1.4
 ```
 
 Package Manager
 
 ```bash
-dotnet add package NetSQLoad --version 1.1.2
+dotnet add package NetSQLoad --version 1.1.4
 ```
 
 PackageReference
 
 ```XML
-<PackageReference Include="NetSQLoad" Version="1.1.2" />
+<PackageReference Include="NetSQLoad" Version="1.1.4" />
 ```
 
 Paket CLI
 
 ```bash
-paket add NetSQLoad --version 1.1.2
+paket add NetSQLoad --version 1.1.4
 ```
 
 Script & Interactive
 
 ```bash
-#r "nuget: NetSQLoad, 1.1.2"
+#r "nuget: NetSQLoad, 1.1.4"
 ```
 
 Cake Addin
 
 ```bash
-#addin nuget:?package=NetSQLoad&version=1.1.2
+#addin nuget:?package=NetSQLoad&version=1.1.4
 ```
 
 Cake Tool
 
 ```bash
-#tool nuget:?package=NetSQLoad&version=1.1.2
+#tool nuget:?package=NetSQLoad&version=1.1.4
 ```
 ## Usage/Examples
 Importing library:
