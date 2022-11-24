@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>NetSQLoad</id>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
     <authors>Erick Lozoya</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
