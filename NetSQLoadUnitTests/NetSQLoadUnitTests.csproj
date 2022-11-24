@@ -20,4 +20,13 @@
     <ProjectReference Include="..\NetSQLoad\NetSQLoad.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="TestQueries\queries1.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="TestQueries\queries2.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
