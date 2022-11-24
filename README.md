@@ -1,6 +1,7 @@
 
 # NetSQLoad
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
 Work your queries in a SQL file instead directly in code.
 
 ## Installation
@@ -68,7 +69,7 @@ SELECT * FROM Employees WHERE active = 1;
 UPDATE Employees SET active = {0} WHERE id = {1};
 ```
 
-Now in our C# code we can use de Query function to get teh query.
+Now in our C# code we can use de Query function to get the query.
 ```csharp
 string query = sqload.Query("GetActiveEmployees");
 Console.WriteLine(query);
@@ -77,4 +78,3 @@ Console.WriteLine(query);
 ## Authors
 
 - [@erickdaniellozoya](https://github.com/erickdaniellozoya)
-
