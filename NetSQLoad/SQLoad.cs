@@ -31,14 +31,14 @@ namespace NetSQLoad
         public string Query(string queryName)
         {
             bool success = _queries.TryGetValue(_casesensitive ? queryName : queryName.ToLower(), out string? query);
-            if (success) throw new QueryException($"Query '{queryName}' was not found.");
+            if (!success) throw new QueryException($"Query '{queryName}' was not found.");
             return query ?? "";
         }
 
         public string Query(string queryName, params object[] queryParams)
         {
             bool success = _queries.TryGetValue(_casesensitive ? queryName : queryName.ToLower(), out string? query);
-            if (success) throw new QueryException($"Query '{queryName}' was not found.");
+            if (!success) throw new QueryException($"Query '{queryName}' was not found.");
             for (int i = 0; i < queryParams.Length; i++)
             {
                 object queryParam = queryParams[i];
