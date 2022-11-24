@@ -1,7 +1,7 @@
 
 # NetSQLoad
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-[![.Net Version](https://img.shields.io/badge/.Net-7.0-blue)]
+![.Net Version](https://img.shields.io/badge/.Net-7.0-blue)
 
 Work your queries in a SQL file instead directly in code. This package is based on the Go library of [midir99](https://github.com/midir99) called [sqload](https://github.com/midir99/sqload).
 
