@@ -2,14 +2,14 @@
 <package >
   <metadata>
     <id>NetSQLoad</id>
-    <version>1.1.2</version>
+    <version>1.1.4</version>
     <authors>Erick Lozoya</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://github.com/erickdaniellozoya/NetSQLoad</projectUrl>
     <description>Work your SQL queries in a SQL file separated from the code</description>
-    <releaseNotes>Bug when try to fetch the query.</releaseNotes>
+    <releaseNotes>Compatibility Issues.</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>SQL</tags>
     <readme>docs\README.md</readme>
