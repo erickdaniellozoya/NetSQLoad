@@ -54,14 +54,14 @@ namespace NetSQLoad
 
         private void ExceptionValidations(string sqlPath)
         {
-            if (string.IsNullOrEmpty(sqlPath)) throw new InvalidPathException("Argument sqlPath cannot be null or empty.");
+            if (string.IsNullOrEmpty(sqlPath)) throw new InvalidPathException("Argument sqlPath cannot be null or empty.", sqlPath);
             if (sqlPath.ToLower().EndsWith(".sql"))
             {
-                if (!File.Exists(sqlPath)) throw new InvalidPathException("The specified file doesn't exist.");
+                if (!File.Exists(sqlPath)) throw new InvalidPathException("The specified file doesn't exist.", sqlPath);
             }
             else
             {
-                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist.");
+                if (!Directory.Exists(sqlPath)) throw new InvalidPathException("The specified directory doesn't exist.", sqlPath);
             }
         }
 

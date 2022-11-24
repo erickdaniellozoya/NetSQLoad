@@ -1,5 +1,6 @@
 ﻿namespace NetSQLoad.Exceptions
 {
+    [Serializable]
     internal class SQLFileFormatException : Exception
     {
         internal SQLFileFormatException() { }

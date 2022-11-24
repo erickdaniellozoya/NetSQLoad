@@ -59,7 +59,7 @@ namespace NetSQLoad.Helpers
                 paths.Add(path);
             }
 
-            if (paths.Count == 0) throw new InvalidPathException($"No SQL files found in '{path}'.");
+            if (paths.Count == 0) throw new InvalidPathException($"No SQL files found in '{path}'.", path);
 
             return paths;
         }
