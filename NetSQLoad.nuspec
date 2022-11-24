@@ -2,22 +2,25 @@
 <package >
   <metadata>
     <id>NetSQLoad</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <authors>Erick Lozoya</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <!-- <icon>icon.png</icon> -->
     <projectUrl>https://github.com/erickdaniellozoya/NetSQLoad</projectUrl>
     <description>Work your SQL queries in a SQL file separated from the code</description>
-    <releaseNotes>Exceptions added, Case Sensitive feature added.</releaseNotes>
+    <releaseNotes>Bug when try to fetch the query.</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>SQL</tags>
     <readme>docs\README.md</readme>
     <repository type="git" url="https://github.com/erickdaniellozoya/NetSQLoad" branch="main" />
     <title>Net SQLoad</title>
+    <dependencies>
+      <group targetFramework="net7.0"></group>
+    </dependencies>
   </metadata>
   <files>
     <file src="README.md" target="docs\" />
-    <file src="NetSQLoad\bin\Release\net7.0\NetSQLoad.dll" target="lib" />
+    <file src="NetSQLoad\bin\Release\net7.0\NetSQLoad.dll" target="lib\net7.0" />
   </files>
 </package>
