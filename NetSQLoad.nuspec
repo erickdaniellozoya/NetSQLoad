@@ -17,7 +17,7 @@
     <title>Net SQLoad</title>
   </metadata>
   <files>
-    <file src="README.md" targed="docs\" />
+    <file src="README.md" target="docs\" />
     <file src="NetSQLoad\bin\Release\net7.0\NetSQLoad.dll" target="lib" />
   </files>
 </package>
