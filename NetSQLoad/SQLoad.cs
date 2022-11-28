@@ -10,6 +10,12 @@ namespace NetSQLoad
         private readonly Dictionary<string, string> _queries;
         private readonly IEnumerable<string> _files;
 
+        //<summary>
+        //Reads SQL files to provide and easy way to store and get the queries.
+        //<param name="sqlPath">The path of the SQL file or files to be loaded.</param>
+        //<exception cref="InvalidPathException">Thrown if the <paramref name="sqlPath"/> argument is not a valid path or if the path doesn't contains any SQL file.</exception>
+        //<exception cref="SQLFileFormatException">Thrown if a SQL file doesn't contains the required format.</exception>
+        //</summary>
         public SQLoad(string sqlPath) 
         {
             ExceptionValidations(sqlPath);
@@ -17,8 +23,16 @@ namespace NetSQLoad
             _casesensitive = true;
             _queries = FileHelper.GetQueries(_sqlPath, _casesensitive);
             _files = FileHelper.GetSQLFiles(_sqlPath).Select(file => new DirectoryInfo(file).Name);
+
         }
 
+        //<summary>
+        //Reads SQL files to provide and easy way to store and get the queries.
+        //<param name="sqlPath">The path of the SQL file or files to be loaded.</param>
+        //<param name="casesensitive">Indicates if the instace will be case sensitive or not. True by default.</param>
+        //<exception cref="InvalidPathException">Thrown if the <paramref name="sqlPath"/> argument is not a valid path or if the path doesn't contains any SQL file.</exception>
+        //<exception cref="SQLFileFormatException">Thrown if a SQL file doesn't contains the required format.</exception>
+        //</summary>
         public SQLoad(string sqlPath, bool casesensitive = true)
         {
             ExceptionValidations(sqlPath);
@@ -28,6 +42,12 @@ namespace NetSQLoad
             _files = FileHelper.GetSQLFiles(_sqlPath).Select(file => new DirectoryInfo(file).Name);
         }
 
+        //<summary>
+        //Provide the specified query founded in the SQL files.
+        //<param name="queryName">A string representing the name of the query.</param>
+        //<returns>A string representing the specified query.</returns>
+        //<exception cref="QueryException">Thrown when a specified query doesn't exist.</exception>
+        //</summary>
         public string Query(string queryName)
         {
             bool success = _queries.TryGetValue(_casesensitive ? queryName : queryName.ToLower(), out string? query);
@@ -35,6 +55,13 @@ namespace NetSQLoad
             return query ?? "";
         }
 
+        //<summary>
+        //Provide the specified query founded in the SQL files.
+        //<param name="queryName">A string representing the name of the query.</param>
+        //<param name="queryParams">A object array representing the values that will be replaced in the query.</param>
+        //<exception cref="QueryException">Thrown when a specified query doesn't exist.</exception>
+        //<returns>A string representing the specified query.</returns>
+        //</summary>
         public string Query(string queryName, params object[] queryParams)
         {
             bool success = _queries.TryGetValue(_casesensitive ? queryName : queryName.ToLower(), out string? query);
@@ -65,6 +92,9 @@ namespace NetSQLoad
             }
         }
 
+        //<summary>
+        //Path where SQL file or files are located.
+        //</summary>
         public string Path
         {
             get
@@ -73,6 +103,9 @@ namespace NetSQLoad
             }
         }
 
+        //<summary>
+        //Collection with the name of the SQL files.
+        //</summary>
         public IEnumerable<string> Files
         {
             get
@@ -81,6 +114,9 @@ namespace NetSQLoad
             }
         }
 
+        //<summary>
+        //Indicates if the instance is seted case sensitive or not.
+        //</summary>
         public bool CaseSensitive
         {
             get
@@ -89,6 +125,9 @@ namespace NetSQLoad
             }
         }
 
+        //<summary>
+        //Collection with the queries loaded.
+        //</summary>
         public IEnumerable<string> Queries
         {
             get
