@@ -3,6 +3,9 @@ using NetSQLoad.Helpers;
 
 namespace NetSQLoad
 {
+    //<summary>
+    //Class to load queries of one or many SQL files.
+    //</summary>
     public class SQLoad
     {
         private readonly string _sqlPath;
